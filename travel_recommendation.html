@@ -212,6 +212,82 @@
             border-radius: 20px;
             font-size: 14px;
         }
+        /* CONTACT SECTION */
+        .contact-section {
+            min-height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            padding: 120px 80px;
+        }
+
+        .contact-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .contact-content {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+        }
+
+        .contact-left h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .contact-left p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* FORM */
+        .contact-form {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 30px;
+            border-radius: 8px;
+            width: 500px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #009688;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -223,7 +299,7 @@
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#about">About Us</a>
-            <a href="#">Contact Us</a>
+            <a href="#contact">Contact Us</a>
         </div>
 
         <div class="search-bar">
@@ -288,27 +364,51 @@
 
                 <div class="team">
                     <div class="member">
-                        <img src="https://via.placeholder.com/60" alt="member">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="member">
                         <h4>Sofia Ramirez</h4>
                         <p>Responsible for guiding the vision and strategy of the platform.</p>
                         <div class="role">CEO</div>
                     </div>
 
                     <div class="member">
-                        <img src="https://via.placeholder.com/60" alt="member">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="member">
                         <h4>Daniel Cruz</h4>
                         <p>Leads the technical development and recommendation systems.</p>
                         <div class="role">Team Lead</div>
                     </div>
 
                     <div class="member">
-                        <img src="https://via.placeholder.com/60" alt="member">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="member">
                         <h4>Valeria Soto</h4>
                         <p>Manages partnerships and ensures smooth service delivery.</p>
                         <div class="role">Operations Manager</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-overlay"></div>
+
+        <div class="contact-content">
+            <div class="contact-left">
+                <h2>CONTACT US</h2>
+                <p>Get in touch</p>
+            </div>
+
+            <form class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </section>
 
