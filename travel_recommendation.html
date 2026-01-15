@@ -122,6 +122,82 @@
             border-radius: 25px;
             cursor: pointer;
         }
+        .hero {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        }
+
+        .hero-content, .social, .results-panel {
+        position: relative;
+        z-index: 2;
+        }
+
+        .results-panel {
+        margin-top: 110px;
+        margin-right: 40px;
+        width: 520px;
+        max-height: 70vh;
+        overflow-y: auto;
+        padding: 0;
+        }
+
+        .result-card {
+        background: #ffffff;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .result-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        }
+
+        .result-card .card-body {
+        padding: 14px 16px 16px;
+        color: #111;
+        }
+
+        .result-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        }
+
+        .result-card p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #444;
+        }
+
+        .result-card .visit-btn {
+        margin-top: 10px;
+        display: inline-block;
+        background: #009688;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 18px;
+        text-decoration: none;
+        font-size: 13px;
+        }
+
+        .results-panel::-webkit-scrollbar {
+        width: 8px;
+        }
+        .results-panel::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.35);
+        border-radius: 10px;
+        }
+
+        .results-empty {
+        color: white;
+        background: rgba(0,0,0,0.45);
+        padding: 12px 14px;
+        border-radius: 10px;
+        }
 
         /* SOCIAL ICONS */
         .social {
@@ -324,7 +400,7 @@
 
             <button>BOOK NOW</button>
         </div>
-
+        <div id="results" class="results-panel"></div>
         <div class="social">
             <a href="#">🐦</a>
             <a href="#">📘</a>
@@ -332,7 +408,6 @@
             <a href="#">▶</a>
         </div>
     </section>
-    <div id="results"></div>
 
     <section class="about-section" id="about">
         <div class="about-overlay"></div>

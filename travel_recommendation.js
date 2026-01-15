@@ -44,34 +44,35 @@ function normalizeKeyword(raw) {
     if (resultsEl) resultsEl.innerHTML = "";
   }
   
-  function renderResults(items, title = "Results") {
+  function renderResults(items, title = "") {
     const resultsEl = document.getElementById("results");
     if (!resultsEl) return;
   
-    if (!items || items.length === 0) {
-      resultsEl.innerHTML = `<p style="color:white; padding:20px;">No results found.</p>`;
+    const list = (items || []).slice(0, 2);
+  
+    if (list.length === 0) {
+      resultsEl.innerHTML = `<div class="results-empty">Please enter a valid search query.</div>`;
       return;
     }
   
-    const cards = items.map((it) => {
-      const name = it.name || it.city || it.country || "Unknown";
-      const desc = it.description || "";
+    resultsEl.innerHTML = list.map((it) => {
+      const name = it.name || it.city || it.country || "Destination";
+      const desc = it.description || "No description available.";
       const img = it.imageUrl || "";
   
       return `
-        <div style="background: rgba(0,0,0,0.55); color:white; padding:15px; border-radius:8px; margin:12px 20px; max-width:800px;">
-          ${img ? `<img src="${img}" alt="${name}" style="width:100%; max-height:260px; object-fit:cover; border-radius:6px; margin-bottom:10px;">` : ""}
-          <h3 style="margin-bottom:8px;">${name}</h3>
-          <p style="line-height:1.5;">${desc}</p>
+        <div class="result-card">
+          ${img ? `<img src="${img}" alt="${name}">` : ""}
+          <div class="card-body">
+            <h3>${name}</h3>
+            <p>${desc}</p>
+            <a class="visit-btn" href="#" onclick="return false;">Visit</a>
+          </div>
         </div>
       `;
     }).join("");
-  
-    resultsEl.innerHTML = `
-      <h2 style="color:white; padding:20px 20px 0;">${title}</h2>
-      ${cards}
-    `;
   }
+  
   
   function handleSearchClick() {
     if (!travelData) {
@@ -126,8 +127,9 @@ function normalizeKeyword(raw) {
   function handleClearClick() {
     const inputEl = document.getElementById("searchInput");
     if (inputEl) inputEl.value = "";
-    clearResults();
+    document.getElementById("results").innerHTML = "";
   }
+  
   
   document.addEventListener("DOMContentLoaded", () => {
     const searchBtn = document.getElementById("searchBtn");
