@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TravelBloom</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            color: white;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            margin-left: 10px;
+        }
+
+        /* Enlaces */
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Buscador */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            width: 220px;
+        }
+
+        .search-bar button {
+            border: none;
+            padding: 8px 14px;
+            margin-left: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            background-color: #00796b;
+            color: white;
+        }
+
+        .clear-btn {
+            background-color: #009688;
+            color: white;
+        }
+
+        .search-bar button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            ✈
+            <span>TravelBloom</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Enter a destination or keyword">
+            <button class="search-btn">Search</button>
+            <button class="clear-btn">Clear</button>
+        </div>
+    </nav>
+
+</body>
+</html>
